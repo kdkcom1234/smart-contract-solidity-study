@@ -5,6 +5,9 @@ require("dotenv").config();
 module.exports = {
   solidity: "0.8.24",
   networks: {
+    localhost: {
+      url: "http://127.0.0.1:8545",
+    },
     amoy: {
       url: process.env.AMOY_RPC_URL, // 환경 변수에서 RPC URL을 읽어옵니다.
       accounts: [process.env.PRIVATE_KEY], // 개인 키를 환경 변수에서 읽어옵니다.
