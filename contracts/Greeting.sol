@@ -1,8 +1,13 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.25;
+pragma solidity ^0.8.24;
 
 contract Greeting {
     uint256 public count;
+    address payable public owner;
+
+    constructor() payable {
+        owner = payable(msg.sender);
+    }
 
     function incrementCounter() public {
         count += 1;
