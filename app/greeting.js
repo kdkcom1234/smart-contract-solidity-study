@@ -3,7 +3,7 @@ const { JsonRpcProvider, Wallet, Contract } = require("ethers");
 require("dotenv").config();
 
 // ABI 가져오기
-const { abi } = require("./artifacts/contracts/Greeting.sol/Greeting.json"); 
+const { abi } = require("../artifacts/contracts/Greeting.sol/Greeting.json"); 
 // console.log(abi);
 
 // contract 주소
