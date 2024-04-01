@@ -29,10 +29,7 @@ contract TayoFriends is ERC721URIStorage, Ownable {
 
         _tokenIdCounter.increment();
         uint256 currentTokenId = _tokenIdCounter.current();
-
-        string memory newTokenURI = tokenURI(currentTokenId); // 메타데이터 URI 계산
         _safeMint(msg.sender, currentTokenId);
-        _setTokenURI(currentTokenId, newTokenURI);
     }
 
     function setMintPrice(uint256 newPrice) public onlyOwner {
