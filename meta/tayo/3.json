@@ -1,0 +1,19 @@
+{
+  "name": "Tayo Friends #3",
+  "description": "Tayo The Little Bus Friend #3",
+  "image": "https://i.namu.wiki/i/qWt2aDxkqRdfBwgHRlKVa1UrKP3nPHJrxLFk08-E7xTkCqBNfZU1zvacX24FUz6LuATVZT0seX1E7KiQo8PzNHgsJAD4Lr_JdClYnszvO1Sif3mh4WL4MwbBkbHDluCE-B6bvYcjTR7riX5Zkb21tQ.webp",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Yellow"
+    },
+    {
+      "trait_type": "Number",
+      "value": "02"
+    },
+    {
+      "trait_type": "Nickname",
+      "value": "Lani"
+    }
+  ]
+}

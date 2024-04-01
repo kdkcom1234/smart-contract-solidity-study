@@ -1,0 +1,19 @@
+{
+  "name": "Tayo Friends #1",
+  "description": "Tayo The Little Bus Friend #1",
+  "image": "https://i.namu.wiki/i/_pwfSSbJyaFgWSuL_d1I6wxmBfHTp5300bBpAh6HUdSn0h4uCN5X5_8kI6c-eTG5SO9V3zrN3lxZh0G78ZXdBPfz9MW_4E6tnhCR0C_Y_VaTad3NiVIT-hzGQvwlgzi15bNkfrgwU_vBd2ufCRMW4Q.webp",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Number",
+      "value": "120"
+    },
+    {
+      "trait_type": "Nickname",
+      "value": "Tayo"
+    }
+  ]
+}

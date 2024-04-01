@@ -1,0 +1,19 @@
+{
+  "name": "Tayo Friends #4",
+  "description": "Tayo The Little Bus Friend #4",
+  "image": "https://i.namu.wiki/i/dpy25t8LgF9wStMd1CUnjjva9m3h0oJvEPti6iljJjvhqCk2khzSi6kP-It6-ihRU-44wgLVjUh9IsJWbnos4bHQUNmG4Cc5CA2kYz2nmkjXYV_ERmuptJs3kZdlASiwY_a9Q-NUYD01LxqlDKffvQ.webp",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Number",
+      "value": "1000"
+    },
+    {
+      "trait_type": "Nickname",
+      "value": "Rogi"
+    }
+  ]
+}
