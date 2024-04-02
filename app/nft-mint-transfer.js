@@ -44,14 +44,15 @@ async function getOwnedTokens(toAddress) {
   const startTime = new Date().getTime();
   // 전송 로그 필터
   // create contract, mint, transferFrom
-  const filter = tokenContract.filters.Transfer();
+  // // 필터 안 먹음
+  // const filter = tokenContract.filters.Transfer(ethers.ZeroAddress, null, null);
 
   // 전체 전송 로그 조회
   const logs = await provider.getLogs({
     fromBlock: "earliest",
     toBlock: "latest",
     address: tokenAddress,
-    topics: filter.topics,
+    // topics: filter.topics,
   });
 
   // 토큰 발행 트랜잭션 삭제
