@@ -41,6 +41,7 @@ async function transferToken(fromAddress, toAddress, tokenId) {
 }
 
 async function getOwnedTokens(toAddress) {
+  const startTime = new Date().getTime();
   // 전송 로그 필터
   // create contract, mint, transferFrom
   const filter = tokenContract.filters.Transfer();
@@ -89,6 +90,11 @@ async function getOwnedTokens(toAddress) {
 
   console.log("----ownedTokens----");
   console.log(ownedTokens);
+
+  const endTime = new Date().getTime();
+
+  console.log("-----response Time");
+  console.log(endTime - startTime);
 }
 
 // // 토큰 민팅 실행
