@@ -40,19 +40,51 @@ async function transferToken(fromAddress, toAddress, tokenId) {
   );
 }
 
+// 민팅받은 목록 조회
+async function getMintedTokens(toAddress) {
+  const startTime = new Date().getTime();
+  // 민팅 전송 로그 토픽 필터
+  // 0x0 -> toAddress
+  const mintTopics = await tokenContract.filters
+    .Transfer(ethers.ZeroAddress, toAddress, null)
+    .getTopicFilter();
+  console.log("----mintTopics----");
+  console.log(mintTopics);
+
+  // 민팅 전송 로그 조회
+  const mintLogs = await provider.getLogs({
+    fromBlock: "earliest",
+    toBlock: "latest",
+    address: tokenAddress,
+    topics: mintTopics,
+  });
+
+  console.log(mintLogs);
+  console.log(mintLogs.length);
+
+  const decodedLogs = mintLogs
+    // 로그의 데이터를 디코드하여 토큰 ID를 추출
+    .map((log) => {
+      const { from, to, tokenId } = tokenContract.interface.decodeEventLog(
+        "Transfer",
+        log.data,
+        log.topics
+      );
+      return { from, to, tokenId };
+    });
+  console.log("----decodedLogs----");
+  console.log(decodedLogs);
+}
+
+// 민팅 받은 것에서 전송 한 것 제외
+// 정확히는 민팅 받은 것, 전송 받은 것 포함, 전송한 것 제외
 async function getOwnedTokens(toAddress) {
   const startTime = new Date().getTime();
-  // 전송 로그 필터
-  // create contract, mint, transferFrom
-  // // 필터 안 먹음
-  // const filter = tokenContract.filters.Transfer(ethers.ZeroAddress, null, null);
-
   // 전체 전송 로그 조회
   const logs = await provider.getLogs({
     fromBlock: "earliest",
     toBlock: "latest",
     address: tokenAddress,
-    // topics: filter.topics,
   });
 
   // 토큰 발행 트랜잭션 삭제
@@ -107,5 +139,7 @@ async function getOwnedTokens(toAddress) {
 //   1
 // );
 
+// 민팅 받은 목록 조회
+getMintedTokens("0x0D9Def42463d4f17a90Aaf9D0076a3c4365059f8");
 // // 특정 주소의 NFT 목록 조회
-getOwnedTokens("0x0D9Def42463d4f17a90Aaf9D0076a3c4365059f8");
+// getOwnedTokens("0x0D9Def42463d4f17a90Aaf9D0076a3c4365059f8");
