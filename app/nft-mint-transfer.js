@@ -81,14 +81,15 @@ async function getMintedTokens(toAddress) {
 async function getOwnedTokens(toAddress) {
   const startTime = new Date().getTime();
   // 전체 전송 로그 조회
+  const topics = await tokenContract.filters
+    .Transfer(null, null, null)
+    .getTopicFilter();
   const logs = await provider.getLogs({
     fromBlock: "earliest",
     toBlock: "latest",
     address: tokenAddress,
+    topics,
   });
-
-  // 토큰 발행 트랜잭션 삭제
-  logs.splice(0, 1);
 
   const decodedLogs = logs
     // 로그의 데이터를 디코드하여 토큰 ID를 추출
@@ -139,7 +140,7 @@ async function getOwnedTokens(toAddress) {
 //   1
 // );
 
-// 민팅 받은 목록 조회
-getMintedTokens("0x0D9Def42463d4f17a90Aaf9D0076a3c4365059f8");
-// // 특정 주소의 NFT 목록 조회
-// getOwnedTokens("0x0D9Def42463d4f17a90Aaf9D0076a3c4365059f8");
+// // 민팅 받은 목록 조회
+// getMintedTokens("0x0D9Def42463d4f17a90Aaf9D0076a3c4365059f8");
+// 특정 주소의 NFT 목록 조회
+getOwnedTokens("0x0D9Def42463d4f17a90Aaf9D0076a3c4365059f8");
