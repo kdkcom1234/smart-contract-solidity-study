@@ -22,14 +22,10 @@ describe("TayoFriends", function () {
 
   describe("Minting", function () {
     it("Should mint a new token and assign it to owner", async function () {
-      // console.log("----addr1---");
-      // console.log(addr1);
       // 민트
       const tx = await tayoFriends
         .connect(addr1)
         .mint({ value: ethers.parseEther("0.001") });
-      // console.log("----tx----");
-      // console.log(tx);
 
       // 소유자 체크
       expect(await tayoFriends.ownerOf(1)).to.equal(addr1.address);
