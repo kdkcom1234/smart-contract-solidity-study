@@ -15,9 +15,9 @@ contract Ex2_1 {
     uint8 a = 5;
 
     // bytes1~32, bytes
-    bytes1 b1 = "a";
-    bytes2 b2 = "ab";
-    bytes b3 = "1234567890"; // bytes: 동적크기
+    bytes1 b1 = 0x11;
+    bytes2 b2 = 0x1111;
+    bytes b3 = hex"01"; // bytes: 동적크기
 
     string str = "contract";
 
