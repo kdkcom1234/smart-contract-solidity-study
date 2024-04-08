@@ -14,4 +14,14 @@ contract Ex5_1 {
     function getMapping(address _key) public view returns (uint) {
         return balances[_key];
     }
+
+    function deleteMapping1(address _key) public {
+        // 맵핑을 삭제하면, 기본값으로 조회됨
+        delete (balances[_key]);
+    }
+
+    function deleteMapping2(address _key) public {
+        // 기본값으로
+        balances[_key] = 0;
+    }
 }
